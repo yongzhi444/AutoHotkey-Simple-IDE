@@ -6,7 +6,7 @@ import os
 
 # import t_btn1
 
-# todo code不折行 竖项自动移动
+# todo code 竖项自动移动
 # todo 自动标点成对的引号括号百分号 ctrlxd行操作
 # todo 回车键直接输入啊
 # todo 设置菜单
@@ -14,6 +14,13 @@ import os
 # todo 滚动条美观优化
 # todo 编译
 # todo 延时工具
+# todo 添加每一个语句的时候自然在后面加上注释
+
+# 下面是一些静态方法，以后可以独立用一个文件，更加整洁一点
+def isVar(str):
+    # todo 用于判定，当前的字符串,是否符合变量命名规范
+    return True
+
 
 class out_put:
     def __init__(self):
@@ -25,7 +32,7 @@ class out_put:
         self.ui.Msg_ok.clicked.connect(self.Msg_ok_pressed)
         self.ui.run_prog_ok.clicked.connect(self.Run_Prog_clicked)
         self.ui.about_btn.clicked.connect(self.about_btn_clicked)
-        # self.ui.t_btn.clicked.connect(t_btn1.t_btn_clicked)
+        self.ui.t_btn.clicked.connect(self.t_btn_clicked)
         self.ui.color_it.clicked.connect(self.color_it_clicked)
         # self.ui.code_text.setTabStopWidth(32)  # 4空格tab
         self.many_inits()
@@ -34,13 +41,22 @@ class out_put:
         self.ui.sendkeyok.clicked.connect(self.sendkeyok_clicked)
         self.ui.setting.clicked.connect(self.setting_connected)
         self.ui.run_btn.clicked.connect(self.run_btn_clicked)
+        # 以下是鼠标键盘系列
+        self.ui.a_ok.clicked.connect(self.a_ok_clicked)
+        self.ui.b_ok.clicked.connect(self.b_ok_clicked)
+        self.ui.c_ok.clicked.connect(self.c_ok_clicked)
+        self.ui.c_com.currentIndexChanged.connect(self.c_com_changed)
+        # 用于计数的变量
+        self.c_is_first = 0
 
     def many_inits(self):
-        self.ui.key_mode.addItems(["选择方式", '完整按键', '按下', '抬起'])  # 注意，完整按键有一次引用，修改需一起
+        self.ui.key_mode.addItems([ '完整按键', '按下', '抬起'])  # 注意，有一次引用，修改需一起
         self.ui.time_show.setSuffix("次")
         self.ui.time_show.setValue(1)
         self.ui.keymap.addItems(["热键们", "Ctrl", "Alt", "q", "w", "e"])  # todo a lot of key to add
         # 上一句热键们有一处引用
+        # self.ui.c_com.addItems(["选择方式"]) # 一次引用
+        self.ui.c_com.addItems(['完整按键', '按下', '抬起']) # 一次引用
         pass
 
     def cnsp_2_ensp(self, str1):
@@ -105,14 +121,17 @@ class out_put:
         for line in codes:
             print(line)
             line = self.pySymbol_2_htmlSymbol(line)
+            # todo 注意这个append是新增一行然后写入的意思，当时可能错在这里了
             self.ui.code_text.append("<font color=\"#FF0000\">" + line + "\n</font> ")
         print("=======")
         pass
 
     def key_mode_valChange(self):
-        if self.ui.key_mode.currentText() == "完整按键":
-            self.ui.time_show.setValue(1)
-        pass
+        # todo 反了，只有完整按键才有次数
+        if self.ui.key_mode.currentText() == "按下" or self.ui.key_mode.currentText() == "抬起":
+            self.ui.time_show.setEnabled(False)
+        else:
+            self.ui.time_show.setEnabled(True)
 
     def sendkeyok_clicked(self):
         # todo 还没对文本框进行处理
@@ -133,9 +152,11 @@ class out_put:
         pass
 
     def t_btn_clicked(self):
-        self.ui = QUiLoader().load('ahk_flat.ui')
+        send_code = "MouseMove,{},{}"
+        self.ui.code_text.append(send_code)
+        # self.ui = QUiLoader().load('ahk_flat.ui')
         # self.ui.code_text.append("<font color=\"#FF0000\">红色字体\n</font> ")
-        self.ui.code_text.append("<font color=\"#FF0000\">&nbsp;haha\n</font> ")
+        # self.ui.code_text.append("<font color=\"#FF0000\">&nbsp;haha\n</font> ")
         pass
 
     def setting_connected(self):
@@ -150,6 +171,58 @@ class out_put:
         run_file = "temp.ahk"
         my_command = "AutoHotkeyU64.exe" + " " + run_file
         os.system(my_command)
+
+    def a_ok_clicked(self):
+        getX = self.ui.a_x.text()
+        getY = self.ui.a_y.text()
+        if getX.isdigit() and getY.isdigit():
+            # todo 这样判定，如果getx个gety是小数，就会被判为否定
+            send_code = "MouseMove,{},{}\n".format(getX, getY)
+        elif getX.isdigit() and isVar(getY):
+            print("adfasfd")
+            send_code = "MouseMove,{},%{}%\n".format(getX, getY)
+        elif isVar(getX) and getY.isdigit():
+            send_code = "MouseMove,%{}%,{}\n".format(getX, getY)
+        elif isVar(getX) and isVar(getY):
+            send_code = "MouseMove,%{}%,%{}%\n".format(getX, getY)
+        else:
+            msgBox = QMessageBox()
+            # todo 报错应该更详细一点，，，
+            msgBox.setText("里面应该放整数或者变量")
+            msgBox.exec()
+            return
+        self.ui.code_text.insertPlainText(send_code)
+
+    def b_ok_clicked(self):
+        getX = self.ui.b_x.text()
+        getY = self.ui.b_y.text()
+        if getX.isdigit() and getY.isdigit():
+            # todo 这样判定，如果getx个gety是小数，就会被判为否定
+            send_code = "Relative,{},{}\n".format(getX, getY)
+        elif getX.isdigit() and isVar(getY):
+            print("adfasfd")
+            send_code = "Relative,{},%{}%\n".format(getX, getY)
+        elif isVar(getX) and getY.isdigit():
+            send_code = "Relative,%{}%,{}\n".format(getX, getY)
+        elif isVar(getX) and isVar(getY):
+            send_code = "Relative,%{}%,%{}%\n".format(getX, getY)
+        else:
+            msgBox = QMessageBox()
+            # todo 报错应该更详细一点，，，
+            msgBox.setText("里面应该放整数或者变量")
+            msgBox.exec()
+            return
+        self.ui.code_text.insertPlainText(send_code)
+
+    def c_com_changed(self):
+        if self.ui.c_com.currentText() == "按下" or self.ui.c_com.currentText() == "抬起":
+            self.ui.c_t.setEnabled(False)
+        else:
+            self.ui.c_t.setEnabled(True)
+
+    def c_ok_clicked(self):
+
+        pass
 
 
 app = QApplication([])
