@@ -5,8 +5,9 @@ import os
 
 
 # import t_btn1
-
+# 等号赋值我没做，因为我暂时并不打算推荐用户使用等号赋值的操作
 # todo code 竖项自动移动
+# todo 语法检查
 # todo 自动标点成对的引号括号百分号 ctrlxd行操作
 # todo 回车键直接输入啊
 # todo 设置菜单
@@ -19,7 +20,10 @@ import os
 # 下面是一些静态方法，以后可以独立用一个文件，更加整洁一点
 def isVar(str):
     # todo 用于判定，当前的字符串,是否符合变量命名规范
-    return True
+    if str:
+        return True
+    else:
+        return False
 
 
 class out_put:
@@ -41,11 +45,13 @@ class out_put:
         self.ui.sendkeyok.clicked.connect(self.sendkeyok_clicked)
         self.ui.setting.clicked.connect(self.setting_connected)
         self.ui.run_btn.clicked.connect(self.run_btn_clicked)
+        self.ui.f_ok.clicked.connect(self.f_ok_clicked)
         # 以下是鼠标键盘系列
         self.ui.a_ok.clicked.connect(self.a_ok_clicked)
         self.ui.b_ok.clicked.connect(self.b_ok_clicked)
         self.ui.c_ok.clicked.connect(self.c_ok_clicked)
         self.ui.c_com.currentIndexChanged.connect(self.c_com_changed)
+
         # 用于计数的变量
         self.c_is_first = 0
 
@@ -222,6 +228,12 @@ class out_put:
 
     def c_ok_clicked(self):
 
+        pass
+
+    def f_ok_clicked(self):
+        if isVar(self.ui.f_var.text()) and self.ui.f_thing.text():
+            send_code = "{} := {}\n".format(self.ui.f_var.text(), self.ui.f_thing.text())
+            self.ui.code_text.insertPlainText(send_code)
         pass
 
 

@@ -39,237 +39,6 @@
     <string>codes</string>
    </property>
   </widget>
-  <widget class="QTabWidget" name="tabWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>70</y>
-     <width>561</width>
-     <height>541</height>
-    </rect>
-   </property>
-   <property name="currentIndex">
-    <number>0</number>
-   </property>
-   <widget class="QWidget" name="tab">
-    <attribute name="title">
-     <string>Tab 1</string>
-    </attribute>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>511</width>
-       <height>231</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>增加一组热键</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="over_it">
-            <property name="text">
-             <string>覆盖原有功能</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="checkBox_2">
-            <property name="text">
-             <string>$模式(实现中)</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_4">
-          <item>
-           <widget class="QComboBox" name="keymap"/>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="hot_key_is">
-            <property name="placeholderText">
-             <string>热键名</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="hotkey_ok">
-            <property name="text">
-             <string>ok</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="Line" name="line_2">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="run">
-        <item>
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>运行程序    </string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="run_prog_is">
-          <property name="placeholderText">
-           <string>程序名</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="run_prog_ok">
-          <property name="text">
-           <string>ok</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Msg">
-        <item>
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>弹出消息框</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Msg_info">
-          <property name="placeholderText">
-           <string>内容</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="Msg_ok">
-          <property name="text">
-           <string>ok</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="Msg_2">
-        <item>
-         <widget class="QLabel" name="label_8">
-          <property name="text">
-           <string>传值</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_9">
-          <property name="text">
-           <string>内容  ：</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Msg_info_2">
-          <property name="placeholderText">
-           <string>被传值的变量</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_10">
-          <property name="text">
-           <string>&lt;==</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="Msg_info_3">
-          <property name="placeholderText">
-           <string>值</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="Msg_ok_2">
-          <property name="text">
-           <string>ok[开发中]</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QLabel" name="label_11">
-          <property name="text">
-           <string>发送按键</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="key2send">
-          <property name="placeholderText">
-           <string>要发送的按键</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="key_mode"/>
-        </item>
-        <item>
-         <widget class="QSpinBox" name="time_show">
-          <property name="minimum">
-           <number>1</number>
-          </property>
-          <property name="maximum">
-           <number>999</number>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="sendkeyok">
-          <property name="text">
-           <string>ok[开发中]</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="tab_2">
-    <attribute name="title">
-     <string>键盘鼠标</string>
-    </attribute>
-   </widget>
-   <widget class="QWidget" name="tab_3">
-    <attribute name="title">
-     <string>haha</string>
-    </attribute>
-   </widget>
-  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
@@ -378,11 +147,258 @@
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QTabWidget" name="tabWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>561</width>
+     <height>531</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <property name="documentMode">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="" native="true">
+    <attribute name="title">
+     <string>系统</string>
+    </attribute>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>511</width>
+       <height>261</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>增加一组热键</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="over_it">
+            <property name="text">
+             <string>覆盖原有功能</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBox_2">
+            <property name="text">
+             <string>$模式(实现中)</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QComboBox" name="keymap"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="hot_key_is">
+            <property name="placeholderText">
+             <string>热键名</string>
+            </property>
+            <property name="clearButtonEnabled">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="hotkey_ok">
+            <property name="text">
+             <string>ok</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="run">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>运行程序    </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="run_prog_is">
+          <property name="placeholderText">
+           <string>程序名</string>
+          </property>
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="run_prog_ok">
+          <property name="text">
+           <string>ok</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="Msg">
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>弹出消息框</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="Msg_info">
+          <property name="placeholderText">
+           <string>内容</string>
+          </property>
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="Msg_ok">
+          <property name="text">
+           <string>ok</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="Msg_2">
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>传值</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>内容  ：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="f_var">
+          <property name="placeholderText">
+           <string>被传值的变量</string>
+          </property>
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>&lt;==</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="f_thing">
+          <property name="placeholderText">
+           <string>值</string>
+          </property>
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="f_ok">
+          <property name="text">
+           <string>ok</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>发送按键</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="key2send">
+          <property name="placeholderText">
+           <string>要发送的按键</string>
+          </property>
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="key_mode"/>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="time_show">
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="sendkeyok">
+          <property name="text">
+           <string>ok[开发中]</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tabWidget_2Page1" native="true">
+    <attribute name="title">
+     <string>键盘鼠标</string>
+    </attribute>
+   </widget>
+  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>160</x>
-     <y>660</y>
+     <y>690</y>
      <width>510</width>
      <height>251</height>
     </rect>
@@ -457,7 +473,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="a_x"/>
+         <widget class="QLineEdit" name="a_x">
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_16">
@@ -473,7 +493,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="a_y"/>
+         <widget class="QLineEdit" name="a_y">
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -493,7 +517,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="b_x"/>
+         <widget class="QLineEdit" name="b_x">
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_20">
@@ -509,14 +537,25 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="b_y"/>
+         <widget class="QLineEdit" name="b_y">
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_7">
         <item>
-         <widget class="QComboBox" name="c_com"/>
+         <widget class="QComboBox" name="c_com">
+          <property name="currentText">
+           <string/>
+          </property>
+          <property name="duplicatesEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_18">
@@ -532,7 +571,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="c_x"/>
+         <widget class="QLineEdit" name="c_x">
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_21">
@@ -548,7 +591,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="c_y"/>
+         <widget class="QLineEdit" name="c_y">
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QSpinBox" name="c_t">
@@ -601,7 +648,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_7"/>
+         <widget class="QLineEdit" name="lineEdit_7">
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_22">
@@ -617,7 +668,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_8"/>
+         <widget class="QLineEdit" name="lineEdit_8">
+          <property name="clearButtonEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
