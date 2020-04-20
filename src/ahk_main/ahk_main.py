@@ -133,7 +133,6 @@ class out_put:
         pass
 
     def key_mode_valChange(self):
-        # todo 反了，只有完整按键才有次数
         if self.ui.key_mode.currentText() == "按下" or self.ui.key_mode.currentText() == "抬起":
             self.ui.time_show.setEnabled(False)
         else:

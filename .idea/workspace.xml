@@ -175,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587173067804</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="4,19核心功能开发">
+      <created>1587273117390</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587273117390</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -204,6 +211,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="测试只在本地的文件的情况" />
     <MESSAGE value="4,18核心功能开发" />
-    <option name="LAST_COMMIT_MESSAGE" value="4,18核心功能开发" />
+    <MESSAGE value="4,19核心功能开发" />
+    <option name="LAST_COMMIT_MESSAGE" value="4,19核心功能开发" />
   </component>
 </project>
