@@ -16,10 +16,14 @@ import os
 # todo 编译
 # todo 延时工具
 # todo 添加每一个语句的时候自然在后面加上注释
-
+# todo 编译的时候记得把那个按键改成循环的形式
 # 下面是一些静态方法，以后可以独立用一个文件，更加整洁一点
 def isVar(str):
     # todo 用于判定，当前的字符串,是否符合变量命名规范
+    if "-" in str:
+        return False
+    if str[0].isdigit():
+        return False
     if str:
         return True
     else:
@@ -51,18 +55,21 @@ class out_put:
         self.ui.b_ok.clicked.connect(self.b_ok_clicked)
         self.ui.c_ok.clicked.connect(self.c_ok_clicked)
         self.ui.c_com.currentIndexChanged.connect(self.c_com_changed)
-
+        self.ui.d_ok.clicked.connect(self.d_ok_clicked)
+        self.ui.e_ok.clicked.connect(self.e_ok_clicked)
         # 用于计数的变量
         self.c_is_first = 0
 
     def many_inits(self):
-        self.ui.key_mode.addItems([ '完整按键', '按下', '抬起'])  # 注意，有一次引用，修改需一起
+        self.ui.key_mode.addItems(['完整按键', '按下', '抬起'])  # 注意，有一次引用，修改需一起
         self.ui.time_show.setSuffix("次")
         self.ui.time_show.setValue(1)
         self.ui.keymap.addItems(["热键们", "Ctrl", "Alt", "q", "w", "e"])  # todo a lot of key to add
         # 上一句热键们有一处引用
         # self.ui.c_com.addItems(["选择方式"]) # 一次引用
-        self.ui.c_com.addItems(['完整按键', '按下', '抬起']) # 一次引用
+        self.ui.c_com.addItems(['完整按键', '按下', '抬起'])  # 一次引用
+        self.ui.c_key.addItems(["左键", "右键", "滚轮/中键"])
+        self.ui.d_mode.addItems(["向上", "向下"])
         pass
 
     def cnsp_2_ensp(self, str1):
@@ -134,6 +141,7 @@ class out_put:
 
     def key_mode_valChange(self):
         if self.ui.key_mode.currentText() == "按下" or self.ui.key_mode.currentText() == "抬起":
+            self.ui.time_show.value = 1
             self.ui.time_show.setEnabled(False)
         else:
             self.ui.time_show.setEnabled(True)
@@ -221,12 +229,40 @@ class out_put:
 
     def c_com_changed(self):
         if self.ui.c_com.currentText() == "按下" or self.ui.c_com.currentText() == "抬起":
+            self.ui.c_t.value = 1
             self.ui.c_t.setEnabled(False)
         else:
             self.ui.c_t.setEnabled(True)
 
     def c_ok_clicked(self):
-
+        mode = self.ui.c_com.currentText()
+        key = self.ui.c_key.currentText()
+        try:
+            time = self.ui.c_t.value()
+        except:
+            time = 1
+        if mode == "完整按键":
+            if key == "左键":
+                code = f"Click, left, {time}  ;左键点击{time}次\n"
+            elif key == "右键":
+                code = f"Click, right, {time}  ;右键单击{time}次\n"
+            elif key == "滚轮/中键":
+                code = f"Click, middle, {time}  ;右键单击{time}次\n"
+        elif mode == "按下":
+            if key == "左键":
+                code = f"Click, left, down  ;按下左键\n"
+            elif key == "右键":
+                code = f"Click, right, down  ;按下右键n"
+            elif key == "滚轮/中键":
+                code = f"Click, middle, down  ;按下中间（就是滚轮键）\n"
+        elif mode == "抬起":
+            if key == "左键":
+                code = f"Click, left, up  ;抬起左键\n"
+            elif key == "右键":
+                code = f"Click, right, up  ;抬起右键\n"
+            elif key == "滚轮/中键":
+                code = f"Click, middle, up  ;抬起中键\n"
+        self.ui.code_text.insertPlainText(code)
         pass
 
     def f_ok_clicked(self):
@@ -235,6 +271,29 @@ class out_put:
             self.ui.code_text.insertPlainText(send_code)
         pass
 
+    def d_ok_clicked(self):
+        time = self.ui.d_time.value()
+        mode = self.ui.d_mode.currentText()
+        if mode == "向上":
+            code = f"bs$ Click, WheelUp,{time}  \n;滚轮向上滚动{time}次"
+        else:
+            code = f"bs$ Click, WheelDown,{time}  \n;滚轮向下滚动{time}次"
+        self.ui.code_text.insertPlainText(code)
+        pass
+
+    def e_ok_clicked(self):
+        x = self.ui.e_x.text()
+        y = self.ui.e_y.text()
+        print(x)
+        print(y)
+        if isVar(x) and isVar(y):
+            code = f"MouseGetPos {x}, {y}  ;当前鼠标的位置坐标将会被保存到{x}和{y}中\n"
+        else:
+            msgBox = QMessageBox()
+            msgBox.setText("x和y填的应该是要保存到的变量名\n检查一下？")
+            msgBox.exec()
+            return
+        self.ui.code_text.insertPlainText(code)
 
 app = QApplication([])
 op = out_put()

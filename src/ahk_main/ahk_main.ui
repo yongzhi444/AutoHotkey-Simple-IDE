@@ -394,12 +394,12 @@
     </attribute>
    </widget>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>680</y>
-     <width>510</width>
+     <x>231</x>
+     <y>651</y>
+     <width>551</width>
      <height>251</height>
     </rect>
    </property>
@@ -426,7 +426,7 @@
       <item>
        <widget class="QLabel" name="label_5">
         <property name="text">
-         <string>鼠标动作</string>
+         <string>鼠标按键</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -436,7 +436,7 @@
       <item>
        <widget class="QLabel" name="label_7">
         <property name="text">
-         <string>滚轮动作</string>
+         <string>滚轮上下</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -558,44 +558,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_18">
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>X</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="c_x">
-          <property name="clearButtonEnabled">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_21">
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Y</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="c_y">
-          <property name="clearButtonEnabled">
-           <bool>false</bool>
-          </property>
-         </widget>
+         <widget class="QComboBox" name="c_key"/>
         </item>
         <item>
          <widget class="QSpinBox" name="c_t">
@@ -618,10 +581,10 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_8">
         <item>
-         <widget class="QComboBox" name="comboBox_2"/>
+         <widget class="QComboBox" name="d_mode"/>
         </item>
         <item>
-         <widget class="QSpinBox" name="time_show_3">
+         <widget class="QSpinBox" name="d_time">
           <property name="suffix">
            <string>次</string>
           </property>
@@ -648,7 +611,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_7">
+         <widget class="QLineEdit" name="e_x">
           <property name="clearButtonEnabled">
            <bool>false</bool>
           </property>
@@ -668,7 +631,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_8">
+         <widget class="QLineEdit" name="e_y">
           <property name="clearButtonEnabled">
            <bool>false</bool>
           </property>
@@ -702,14 +665,14 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_6">
+       <widget class="QPushButton" name="d_ok">
         <property name="text">
          <string>OK</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_7">
+       <widget class="QPushButton" name="e_ok">
         <property name="text">
          <string>OK</string>
         </property>
