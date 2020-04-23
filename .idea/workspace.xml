@@ -189,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587388665393</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="4,22核心功能开发">
+      <created>1587551704728</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587551704728</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -220,6 +227,7 @@
     <MESSAGE value="4,18核心功能开发" />
     <MESSAGE value="4,19核心功能开发" />
     <MESSAGE value="4,20核心功能补充" />
-    <option name="LAST_COMMIT_MESSAGE" value="4,20核心功能补充" />
+    <MESSAGE value="4,22核心功能开发" />
+    <option name="LAST_COMMIT_MESSAGE" value="4,22核心功能开发" />
   </component>
 </project>

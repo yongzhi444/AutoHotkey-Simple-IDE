@@ -295,6 +295,10 @@ class out_put:
             return
         self.ui.code_text.insertPlainText(code)
 
+    def g_ok_clicked(self):
+        code = f"Sleep,{self.ui.g_time.value()}\n"
+        self.ui.code_text.insertPlainText(code)
+
 app = QApplication([])
 op = out_put()
 op.ui.show()
