@@ -1,4 +1,4 @@
-from PySide2.QtWidgets import QApplication, QMessageBox, QTreeWidget, QTreeWidgetItem
+from PySide2.QtWidgets import QApplication, QMessageBox, QTreeWidget, QTreeWidgetItem, QFileDialog
 from PySide2.QtUiTools import QUiLoader
 import setting_pyfile
 import os
@@ -29,6 +29,11 @@ def isVar(str):
     else:
         return False
 
+def bs_Magic(str):
+    # todo 还没做
+    # str = str.
+    assert str.strip().startswith("bs$")
+
 
 class out_put:
     def __init__(self):
@@ -38,6 +43,7 @@ class out_put:
         print(self.ui.whatsThis())
         self.ui.hotkey_ok.clicked.connect(self.hot_key_pressed)
         self.ui.Msg_ok.clicked.connect(self.Msg_ok_pressed)
+        self.ui.open_btn.clicked.connect(self.open_btn_clicked)
         self.ui.run_prog_ok.clicked.connect(self.Run_Prog_clicked)
         self.ui.about_btn.clicked.connect(self.about_btn_clicked)
         self.ui.t_btn.clicked.connect(self.t_btn_clicked)
@@ -50,6 +56,7 @@ class out_put:
         self.ui.setting.clicked.connect(self.setting_connected)
         self.ui.run_btn.clicked.connect(self.run_btn_clicked)
         self.ui.f_ok.clicked.connect(self.f_ok_clicked)
+        self.ui.save_btn.clicked.connect(self.save_btn_clicked)
         # 以下是鼠标键盘系列
         self.ui.a_ok.clicked.connect(self.a_ok_clicked)
         self.ui.b_ok.clicked.connect(self.b_ok_clicked)
@@ -57,8 +64,8 @@ class out_put:
         self.ui.c_com.currentIndexChanged.connect(self.c_com_changed)
         self.ui.d_ok.clicked.connect(self.d_ok_clicked)
         self.ui.e_ok.clicked.connect(self.e_ok_clicked)
-        # 用于计数的变量
-        self.c_is_first = 0
+        # 延时
+        self.ui.g_ok.clicked.connect(self.g_ok_clicked)
 
     def many_inits(self):
         self.ui.key_mode.addItems(['完整按键', '按下', '抬起'])  # 注意，有一次引用，修改需一起
@@ -125,6 +132,15 @@ class out_put:
         msgBox.exec()
         pass
 
+    def open_btn_clicked(self):
+        openfile_name = QFileDialog.getOpenFileName(self.ui, '选择一个文件啵', '/', 'bs files(*.bs , *.txt)')
+        f = open(openfile_name[0], mode="r", encoding="utf8")
+        lines = f.readlines()
+        for a_line in lines:
+            self.ui.code_text.insertPlainText(a_line)
+        f.close()
+        pass
+
     def color_it_clicked(self):
         # todo 有bug不好用
         info = self.ui.code_text.toPlainText()
@@ -165,11 +181,10 @@ class out_put:
         pass
 
     def t_btn_clicked(self):
-        send_code = "MouseMove,{},{}"
-        self.ui.code_text.append(send_code)
-        # self.ui = QUiLoader().load('ahk_flat.ui')
+        openfile_name = QFileDialog.getOpenFileName(self.ui, '选择文件', '/', 'bs files(*.xlsx , *.xls)')
+        # bs files(*.xlsx , *.xls)' 多个文件格式就这么整
         # self.ui.code_text.append("<font color=\"#FF0000\">红色字体\n</font> ")
-        # self.ui.code_text.append("<font color=\"#FF0000\">&nbsp;haha\n</font> ")
+        print(openfile_name)
         pass
 
     def setting_connected(self):
@@ -298,6 +313,11 @@ class out_put:
     def g_ok_clicked(self):
         code = f"Sleep,{self.ui.g_time.value()}\n"
         self.ui.code_text.insertPlainText(code)
+
+    def save_btn_clicked(self):
+        code = self.ui.code_text.toPlainText
+        with open("D:/a/app.txt",mode="w",encoding="utf8") as fp:
+            fp.write()
 
 app = QApplication([])
 op = out_put()

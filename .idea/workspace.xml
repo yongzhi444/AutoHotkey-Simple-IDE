@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ahk_main/ahk_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/ahk_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ahk_main/ahk_main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/ahk_main.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/temp.ahk" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/temp.ahk" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587551704728</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="4,23补充一个小功能">
+      <created>1587645273381</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587645273381</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -228,6 +236,7 @@
     <MESSAGE value="4,19核心功能开发" />
     <MESSAGE value="4,20核心功能补充" />
     <MESSAGE value="4,22核心功能开发" />
-    <option name="LAST_COMMIT_MESSAGE" value="4,22核心功能开发" />
+    <MESSAGE value="4,23补充一个小功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="4,23补充一个小功能" />
   </component>
 </project>
