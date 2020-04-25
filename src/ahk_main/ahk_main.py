@@ -2,7 +2,7 @@ from PySide2.QtWidgets import QApplication, QMessageBox, QTreeWidget, QTreeWidge
 from PySide2.QtUiTools import QUiLoader
 import setting_pyfile
 import os
-
+from threading import Thread
 
 # import t_btn1
 # 等号赋值我没做，因为我暂时并不打算推荐用户使用等号赋值的操作
@@ -66,6 +66,9 @@ class out_put:
         self.ui.e_ok.clicked.connect(self.e_ok_clicked)
         # 延时
         self.ui.g_ok.clicked.connect(self.g_ok_clicked)
+        # 循环
+        self.ui.h_ok1.clicked.connect(self.h_ok1_clicked)
+        self.ui.h_ok2.clicked.connect(self.h_ok2_clicked)
 
     def many_inits(self):
         self.ui.key_mode.addItems(['完整按键', '按下', '抬起'])  # 注意，有一次引用，修改需一起
@@ -192,13 +195,17 @@ class out_put:
         setting_show1.ui.show()
         setting_show1.ui.exec()
 
+    def thread_target(self):
+        my_command = "AutoHotkeyU64.exe temp.ahk"
+        os.system(my_command)
+
     def run_btn_clicked(self):
         with open("temp.ahk", "w", encoding="gbk") as fp:
             context = self.ui.code_text.toPlainText()
             fp.write(context)
-        run_file = "temp.ahk"
-        my_command = "AutoHotkeyU64.exe" + " " + run_file
-        os.system(my_command)
+        t = Thread(target=self.thread_target, daemon=True)
+        t.start()
+        # t.join()
 
     def a_ok_clicked(self):
         getX = self.ui.a_x.text()
@@ -315,9 +322,29 @@ class out_put:
         self.ui.code_text.insertPlainText(code)
 
     def save_btn_clicked(self):
-        code = self.ui.code_text.toPlainText
+        code = self.ui.code_text.toPlainText()
         with open("D:/a/app.txt",mode="w",encoding="utf8") as fp:
-            fp.write()
+            for line in code.split("\n"):
+                fp.write(line)
+
+    def h_ok1_clicked(self):
+        t = self.ui.h_t.text()
+        code = "Loop, " + t + "{\n  ; 在这里写循环中的内容\n\n}\n"
+        self.ui.code_text.insertPlainText(code)
+
+    def h_ok2_clicked(self):
+        t = self.ui.h_t.text()
+        code = "Loop, " + t + "{\n  ; 在这里写循环中的内容\n\n}Until (布尔表达式)\n"
+        self.ui.code_text.insertPlainText(code)
+
+    def h_c_clicked(self):
+        code = "continue  ;进入下一个循环节\n"
+        self.ui.code_text.insertPlainText(code)
+
+    def h_b_clicked(self):
+        code = "break  ;终止当前的循环\n"
+        self.ui.code_text.insertPlainText(code)
+
 
 app = QApplication([])
 op = out_put()
