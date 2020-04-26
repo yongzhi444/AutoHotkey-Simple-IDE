@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78c87029-a7a9-4f4e-9302-32d687c3ff4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/temp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ahk_main/ahk_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/ahk_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ahk_main/ahk_main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/ahk_main.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ahk_main/temp.ahk" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/temp.ahk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compile/compile.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/compile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/compile/compile.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/compile.ui" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="AutoHotKeySimpleIDE" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -60,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.compile (1)">
+  <component name="RunManager" selected="Python.ahk_main">
     <configuration name="ahk_main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ahk" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -124,7 +124,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="fm_main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="nouse" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ahk" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -132,11 +132,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/filemanager" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/存档" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/filemanager/fm_main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/存档/nouse.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -168,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ahk_main" />
+        <item itemvalue="Python.nouse" />
         <item itemvalue="Python.compile (1)" />
         <item itemvalue="Python.compile" />
-        <item itemvalue="Python.ahk_main" />
         <item itemvalue="Python.temp" />
-        <item itemvalue="Python.fm_main" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587739298275</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="4,25实现了打开文件和运行">
+      <created>1587809111319</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587809111319</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -270,6 +277,7 @@
     <MESSAGE value="4,22核心功能开发" />
     <MESSAGE value="4,23补充一个小功能" />
     <MESSAGE value="4,24补充一个小功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="4,24补充一个小功能" />
+    <MESSAGE value="4,25实现了打开文件和运行" />
+    <option name="LAST_COMMIT_MESSAGE" value="4,25实现了打开文件和运行" />
   </component>
 </project>

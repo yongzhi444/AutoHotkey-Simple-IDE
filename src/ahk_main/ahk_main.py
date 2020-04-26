@@ -3,7 +3,7 @@ from PySide2.QtUiTools import QUiLoader
 import setting_pyfile
 import os
 from threading import Thread
-
+import re
 # import t_btn1
 # 等号赋值我没做，因为我暂时并不打算推荐用户使用等号赋值的操作
 # todo code 竖项自动移动
@@ -30,10 +30,22 @@ def isVar(str):
         return False
 
 def bs_Magic(str):
-    # todo 还没做
-    # str = str.
-    assert str.strip().startswith("bs$")
-
+    """
+    博深魔改的部分
+    :param str: 任意一个字符串（一行）
+    :return: 标准ahk代码,可能会返回好几行，然后中间夹着\n进行返回
+    """
+    if not str.strip().startswith("bs$"):
+        return str
+    a = "bs$ Hotkey Ctrl q::"
+    b = "bs$ Click, WheelDown,1"
+    command = re.findall(" *bs[$] *([A-Za-z])*[, ]",str)
+    if command=="Hotkey":
+        return
+    elif command == "Click":
+        return
+    else:
+        print("An err")
 
 class out_put:
     def __init__(self):
@@ -53,7 +65,6 @@ class out_put:
         self.ui.key_mode.currentIndexChanged.connect(self.key_mode_valChange)
         self.ui.keymap.currentIndexChanged.connect(self.keymap_valChange)
         self.ui.sendkeyok.clicked.connect(self.sendkeyok_clicked)
-        self.ui.setting.clicked.connect(self.setting_connected)
         self.ui.run_btn.clicked.connect(self.run_btn_clicked)
         self.ui.f_ok.clicked.connect(self.f_ok_clicked)
         self.ui.save_btn.clicked.connect(self.save_btn_clicked)
@@ -116,9 +127,9 @@ class out_put:
         while hot_key_is_str.endswith(" "):
             hot_key_is_str = hot_key_is_str[:-1]
         if self.ui.over_it.checkState():
-            info = "bs$ ~" + self.ui.hot_key_is.text() + "::\n\t;在此填入按下热键后执行的命令\n\nReturn\n\n"
+            info = "bs$ Hotkey~" + self.ui.hot_key_is.text() + "::\n\t;在此填入按下热键后执行的命令\n\nReturn\n\n"
         else:
-            info = "bs$ " + self.ui.hot_key_is.text() + "::\n;在此填入按下热键后执行的命令\n\nReturn\n\n"
+            info = "bs$ Hotkey" + self.ui.hot_key_is.text() + "::\n;在此填入按下热键后执行的命令\n\nReturn\n\n"
         self.ui.code_text.insertPlainText(info)
 
     def Msg_ok_pressed(self):
@@ -323,9 +334,12 @@ class out_put:
 
     def save_btn_clicked(self):
         code = self.ui.code_text.toPlainText()
-        with open("D:/a/app.txt",mode="w",encoding="utf8") as fp:
-            for line in code.split("\n"):
-                fp.write(line)
+        openfile_name = QFileDialog.getSaveFileName(self.ui, "haha", "/", "bs files(*.bs)")
+        # openfile_name = QFileDialog.getOpenFileName(self.ui, '选择一个文件啵', '/', 'bs files(*.bs , *.txt)')
+        if openfile_name[0]:
+            with open(openfile_name[0], mode="w", encoding="utf8") as fp:
+                for line in code.split("\n"):
+                    fp.write(line)
 
     def h_ok1_clicked(self):
         t = self.ui.h_t.text()
