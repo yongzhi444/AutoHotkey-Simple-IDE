@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78c87029-a7a9-4f4e-9302-32d687c3ff4b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ahk_main/ahk_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/ahk_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ahk_main/ahk_main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/ahk_main.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/compile.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/compile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/compile.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/compile.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/setting_pyfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/setting_pyfile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ahk_main/temp.ahk" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/temp.ahk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/temp.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/temp.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +39,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -60,7 +65,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ahk_main">
+  <component name="RunManager" selected="Python.compile (1)">
     <configuration name="ahk_main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ahk" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -168,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ahk_main" />
-        <item itemvalue="Python.nouse" />
         <item itemvalue="Python.compile (1)" />
-        <item itemvalue="Python.compile" />
+        <item itemvalue="Python.ahk_main" />
         <item itemvalue="Python.temp" />
+        <item itemvalue="Python.nouse" />
+        <item itemvalue="Python.compile" />
       </list>
     </recent_temporary>
   </component>
@@ -243,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587809111319</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="4,26">
+      <created>1587912286983</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587912286983</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -278,6 +290,7 @@
     <MESSAGE value="4,23补充一个小功能" />
     <MESSAGE value="4,24补充一个小功能" />
     <MESSAGE value="4,25实现了打开文件和运行" />
-    <option name="LAST_COMMIT_MESSAGE" value="4,25实现了打开文件和运行" />
+    <MESSAGE value="4,26" />
+    <option name="LAST_COMMIT_MESSAGE" value="4,26" />
   </component>
 </project>

@@ -36,7 +36,7 @@
          <item>
           <widget class="QPushButton" name="save_btn">
            <property name="text">
-            <string>保存[开发中]</string>
+            <string>保存</string>
            </property>
           </widget>
          </item>
@@ -55,7 +55,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="cp_btn">
            <property name="text">
             <string>编译</string>
            </property>
@@ -66,7 +66,7 @@
        <item>
         <widget class="QTabWidget" name="tabWidget_2">
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <property name="documentMode">
           <bool>true</bool>

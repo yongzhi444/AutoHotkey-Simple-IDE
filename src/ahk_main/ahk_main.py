@@ -1,9 +1,12 @@
 from PySide2.QtWidgets import QApplication, QMessageBox, QTreeWidget, QTreeWidgetItem, QFileDialog
 from PySide2.QtUiTools import QUiLoader
 import setting_pyfile
+import compile
 import os
 from threading import Thread
 import re
+
+
 # import t_btn1
 # 等号赋值我没做，因为我暂时并不打算推荐用户使用等号赋值的操作
 # todo code 竖项自动移动
@@ -29,6 +32,7 @@ def isVar(str):
     else:
         return False
 
+
 def bs_Magic(str):
     """
     博深魔改的部分
@@ -37,15 +41,27 @@ def bs_Magic(str):
     """
     if not str.strip().startswith("bs$"):
         return str
+    # 现阶段支持的语句：
     a = "bs$ Hotkey Ctrl q::"
     b = "bs$ Click, WheelDown,1"
-    command = re.findall(" *bs[$] *([A-Za-z])*[, ]",str)
-    if command=="Hotkey":
-        return
-    elif command == "Click":
-        return
+    command = re.findall(" *bs[$] *([A-Za-z]*)[, ]", str)
+    if command[0] == "Hotkey":
+        temp = re.split("[, ;+\n]", str)
+        while "" in temp:
+            temp.remove("")
+        key_num = temp.index("::") - 2
+        if key_num == 1:
+            return temp[2] + "::"
+        elif key_num == 2:
+            return temp[2] + " & " + temp[3] + "::"
+    elif command[0] == "Click":
+        temp = re.split("[, ;]", str)
+        while "" in temp:
+            temp.remove("")
+        return "Loop " + temp[3] + "{\n    Click, " + temp[2] + "\n}\n"
     else:
         print("An err")
+
 
 class out_put:
     def __init__(self):
@@ -80,12 +96,15 @@ class out_put:
         # 循环
         self.ui.h_ok1.clicked.connect(self.h_ok1_clicked)
         self.ui.h_ok2.clicked.connect(self.h_ok2_clicked)
+        # 编译
+        self.ui.cp_btn.clicked.connect(self.cp_btn_clicked)
 
     def many_inits(self):
         self.ui.key_mode.addItems(['完整按键', '按下', '抬起'])  # 注意，有一次引用，修改需一起
         self.ui.time_show.setSuffix("次")
         self.ui.time_show.setValue(1)
-        self.ui.keymap.addItems(["热键们", "Ctrl", "Alt", "q", "w", "e"])  # todo a lot of key to add
+        self.ui.keymap.addItems(
+            ["热键们", "Ctrl", "Alt", "Shift", "Win", "Q", "W", "E", "..."])  # todo a lot of key to add
         # 上一句热键们有一处引用
         # self.ui.c_com.addItems(["选择方式"]) # 一次引用
         self.ui.c_com.addItems(['完整按键', '按下', '抬起'])  # 一次引用
@@ -124,12 +143,14 @@ class out_put:
 
     def hot_key_pressed(self):
         hot_key_is_str = self.ui.hot_key_is.text()
+        if not hot_key_is_str:
+            return
         while hot_key_is_str.endswith(" "):
             hot_key_is_str = hot_key_is_str[:-1]
         if self.ui.over_it.checkState():
-            info = "bs$ Hotkey~" + self.ui.hot_key_is.text() + "::\n\t;在此填入按下热键后执行的命令\n\nReturn\n\n"
+            info = "bs$ Hotkey ~" + self.ui.hot_key_is.text() + " ::\n\t;在此填入按下热键后执行的命令\n\nReturn\n\n"
         else:
-            info = "bs$ Hotkey" + self.ui.hot_key_is.text() + "::\n;在此填入按下热键后执行的命令\n\nReturn\n\n"
+            info = "bs$ Hotkey " + self.ui.hot_key_is.text() + " ::\n;在此填入按下热键后执行的命令\n\nReturn\n\n"
         self.ui.code_text.insertPlainText(info)
 
     def Msg_ok_pressed(self):
@@ -159,7 +180,6 @@ class out_put:
         # todo 有bug不好用
         info = self.ui.code_text.toPlainText()
         codes = info.split("\n")
-        print(codes)
         self.ui.code_text.setText("")
         for line in codes:
             print(line)
@@ -185,13 +205,13 @@ class out_put:
 
     def keymap_valChange(self):
         this_key = self.ui.keymap.currentText()
-        if this_key == "热键们":
+        if this_key == "热键们" or this_key == "...":
             return
         temp = self.ui.hot_key_is.text()
         if temp == "":
             self.ui.hot_key_is.setText(this_key)
         else:
-            self.ui.hot_key_is.setText(temp + " " + this_key)
+            self.ui.hot_key_is.setText(temp + "+" + this_key)
         pass
 
     def t_btn_clicked(self):
@@ -212,8 +232,10 @@ class out_put:
 
     def run_btn_clicked(self):
         with open("temp.ahk", "w", encoding="gbk") as fp:
-            context = self.ui.code_text.toPlainText()
-            fp.write(context)
+            for line in self.ui.code_text.toPlainText().split("\n"):
+                context = bs_Magic(line)
+                if context:
+                    fp.write(context + "\n")
         t = Thread(target=self.thread_target, daemon=True)
         t.start()
         # t.join()
@@ -358,6 +380,20 @@ class out_put:
     def h_b_clicked(self):
         code = "break  ;终止当前的循环\n"
         self.ui.code_text.insertPlainText(code)
+
+    def compile_task(self):
+        # cpw = compile.compile()
+        # cpw.show()
+        # cpw.exec_()
+        pass
+
+    def cp_btn_clicked(self):
+        compile1 = compile.compile()
+        compile1.ui.show()
+        compile1.ui.exec()
+        # t = Thread(target=self.compile_task, daemon=True)
+        # t.start()
+        pass
 
 
 app = QApplication([])
