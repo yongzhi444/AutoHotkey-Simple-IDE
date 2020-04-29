@@ -89,7 +89,11 @@
        <widget class="QLineEdit" name="b_line"/>
       </item>
       <item>
-       <widget class="QLineEdit" name="c_line"/>
+       <widget class="QLineEdit" name="c_line">
+        <property name="readOnly">
+         <bool>false</bool>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>

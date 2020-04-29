@@ -2,15 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78c87029-a7a9-4f4e-9302-32d687c3ff4b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/Compiler/ANSI 32-bit.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/Compiler/Ahk2Exe.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/Compiler/AutoHotkeySC.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/Compiler/Unicode 32-bit.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/Compiler/Unicode 64-bit.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/magicChange.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/UI/CompileUI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/UI/mainUI.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/compileWindow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/magicChange/base1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/main1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/outTools/ANSI 32-bit.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/outTools/Ahk2Exe.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/outTools/AutoHotkeySC.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/outTools/AutoHotkeyU64.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/outTools/Unicode 32-bit.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/outTools/Unicode 64-bit.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/开发规范/v1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TODO-LIST.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/TODO-LIST.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ahk_main/ahk_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/ahk_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ahk_main/ahk_main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/ahk_main.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ahk_main/compile.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/compile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ahk_main/compile.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/compile.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ahk_main/setting_pyfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/setting_pyfile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ahk_main/temp.ahk" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/temp.ahk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ahk_main/temp.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/temp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/高亮.txt" beforeDir="false" afterPath="$PROJECT_DIR$/开发规范/高亮.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/资料/ui变成py.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/资料/ui变成py.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,19 +54,21 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ahk_main/release1/outTools" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\codeStudy\onGitCodes\AutoHotKeySimpleIDE\开发规范" />
       <recent name="D:\codeStudy\onGitCodes\AutoHotKeySimpleIDE\src\ahk_main" />
       <recent name="D:\codeStudy\projs\ahk\src" />
       <recent name="D:\codeStudy\projs\ahk\src\整理中\ahk_flat" />
       <recent name="D:\codeStudy\projs\ahk\src\整理中" />
-      <recent name="D:\codeStudy\projs\ahk\src\整理中\资料" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\codeStudy\onGitCodes\AutoHotKeySimpleIDE\src\ahk_main\release1\outTools" />
+      <recent name="D:\codeStudy\onGitCodes\AutoHotKeySimpleIDE\src\ahk_main\release1" />
       <recent name="D:\codeStudy\projs\ahk\src" />
     </key>
   </component>
@@ -65,7 +84,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.compile (1)">
+  <component name="RunManager" selected="Python.ahk_main">
+    <configuration name="ahk_main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ahk" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/ahk_main/release1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:\codeStudy\onGitCodes\AutoHotKeySimpleIDE\src\ahk_main\release1\main1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ahk_main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ahk" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,7 +127,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="compile (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="flattst" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ahk" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -99,7 +139,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/ahk_main/compile.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/ahk_main/flattst.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -108,7 +148,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="compile" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="main1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ahk" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -116,11 +156,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/compile" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/ahk_main/release1" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\codeStudy\onGitCodes\AutoHotKeySimpleIDE\src\ahk_main\compile.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/ahk_main/release1/main1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,34 +190,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="temp" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ahk" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/ahk_main" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/ahk_main/temp.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.compile (1)" />
         <item itemvalue="Python.ahk_main" />
-        <item itemvalue="Python.temp" />
         <item itemvalue="Python.nouse" />
-        <item itemvalue="Python.compile" />
+        <item itemvalue="Python.main1" />
+        <item itemvalue="Python.flattst" />
+        <item itemvalue="Python.ahk_main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587912286983</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="4,27完成了热键部分，执行功能可以使用了，编译功能还在开发中。ui设计有微小改变。">
+      <created>1587995763624</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587995763624</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -291,6 +317,7 @@
     <MESSAGE value="4,24补充一个小功能" />
     <MESSAGE value="4,25实现了打开文件和运行" />
     <MESSAGE value="4,26" />
-    <option name="LAST_COMMIT_MESSAGE" value="4,26" />
+    <MESSAGE value="4,27完成了热键部分，执行功能可以使用了，编译功能还在开发中。ui设计有微小改变。" />
+    <option name="LAST_COMMIT_MESSAGE" value="4,27完成了热键部分，执行功能可以使用了，编译功能还在开发中。ui设计有微小改变。" />
   </component>
 </project>

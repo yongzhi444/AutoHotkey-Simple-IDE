@@ -1,17 +1,17 @@
 from PySide2.QtWidgets import QApplication, QMessageBox, QTreeWidget, QTreeWidgetItem, QFileDialog
 from PySide2.QtUiTools import QUiLoader
-import setting_pyfile
 import os
 from threading import Thread
+from compileWindow import CompileWindow
+from UI.mainUI import MainWindowUI
+from magicChange.base1 import bs_Magic
 
-# import t_btn1
 # 等号赋值我没做，因为我暂时并不打算推荐用户使用等号赋值的操作
 # todo code 竖项自动移动
 # todo 语法检查
 # todo 自动标点成对的引号括号百分号 ctrlxd行操作
 # todo 回车键直接输入啊
 # todo 设置菜单
-# todo run 好像得多线程
 # todo 滚动条美观优化
 # todo 编译
 # todo 延时工具
@@ -19,8 +19,6 @@ from threading import Thread
 # todo 编译和保存的成功提示
 # todo 编译的时候记得把那个按键改成循环的形式
 # 下面是一些静态方法，以后可以独立用一个文件，更加整洁一点
-from compile import Compile
-from magicChange import bs_Magic
 
 
 def isVar(str1):
@@ -37,8 +35,8 @@ def isVar(str1):
 
 class out_put:
     def __init__(self):
-        self.compile1 = Compile("default")
-        self.ui = QUiLoader().load('ahk_main.ui')
+        self.compile1 = CompileWindow("default")
+        self.ui = MainWindowUI()
         # self.ui.insert_btn.clicked.connect(self.insert)
         # self.ui.Form.funs.hot_key.hot_key_ok.connect(self.hot_key_pressed())
         print(self.ui.whatsThis())
@@ -194,10 +192,10 @@ class out_put:
         print(openfile_name)
         pass
 
-    def setting_connected(self):
-        setting_show1 = setting_pyfile.setting_show()
-        setting_show1.ui.show()
-        setting_show1.ui.exec()
+    # def setting_connected(self):
+    #     setting_show1 = setting_pyfile.setting_show()
+    #     setting_show1.ui.show()
+    #     setting_show1.ui.exec()
 
     def thread_target(self):
         my_command = "AutoHotkeyU64.exe temp.ahk"

@@ -1,4 +1,4 @@
-再pyside2的uic中，会自动生成代码，然后，对代码做如下修改
+在pyside2的uic中，会自动生成代码，然后，对代码做如下修改
 就可以相当于导入ui文件的样子
 1，对ui文件进行继承，并且如下方式调用父类方法
 class Ui_Form(QMainWindow):
