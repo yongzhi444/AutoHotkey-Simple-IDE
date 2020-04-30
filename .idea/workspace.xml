@@ -2,32 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78c87029-a7a9-4f4e-9302-32d687c3ff4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/Compiler/ANSI 32-bit.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/Compiler/Ahk2Exe.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/Compiler/AutoHotkeySC.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/Compiler/Unicode 32-bit.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/Compiler/Unicode 64-bit.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/magicChange.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/UI/CompileUI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/UI/mainUI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/compileWindow.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/magicChange/base1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/main1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/outTools/ANSI 32-bit.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/outTools/Ahk2Exe.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/outTools/AutoHotkeySC.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/outTools/AutoHotkeyU64.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/outTools/Unicode 32-bit.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1/outTools/Unicode 64-bit.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/开发规范/v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1.1/MainWindow/MainWindowLogic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1.1/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ahk_main/release1.1/tools/tool1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TODO-LIST.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/TODO-LIST.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ahk_main/ahk_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/ahk_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ahk_main/compile.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/compile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ahk_main/compile.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/compile.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ahk_main/temp.ahk" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/temp.ahk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ahk_main/高亮.txt" beforeDir="false" afterPath="$PROJECT_DIR$/开发规范/高亮.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/资料/ui变成py.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/资料/ui变成py.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/ahk_main.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/ahk_main/release1.1/MainWindow/MainWindowUI.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/release1/UI/CompileUI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/release1/UI/mainUI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/release1/compileWindow.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/release1/magicChange/base1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/release1/main1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/release1/outTools/ANSI 32-bit.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/release1/outTools/Ahk2Exe.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/release1/outTools/AutoHotkeySC.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/release1/outTools/AutoHotkeyU64.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/release1/outTools/Unicode 32-bit.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ahk_main/release1/outTools/Unicode 64-bit.bin" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,17 +49,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\codeStudy\onGitCodes\AutoHotKeySimpleIDE\开发规范" />
-      <recent name="D:\codeStudy\onGitCodes\AutoHotKeySimpleIDE\src\ahk_main" />
-      <recent name="D:\codeStudy\projs\ahk\src" />
-      <recent name="D:\codeStudy\projs\ahk\src\整理中\ahk_flat" />
-      <recent name="D:\codeStudy\projs\ahk\src\整理中" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\codeStudy\onGitCodes\AutoHotKeySimpleIDE\src\ahk_main\release1\outTools" />
       <recent name="D:\codeStudy\onGitCodes\AutoHotKeySimpleIDE\src\ahk_main\release1" />
       <recent name="D:\codeStudy\projs\ahk\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\codeStudy\onGitCodes\AutoHotKeySimpleIDE\src\ahk_main\release1.1\MainWindow" />
+      <recent name="D:\codeStudy\onGitCodes\AutoHotKeySimpleIDE\开发规范" />
+      <recent name="D:\codeStudy\onGitCodes\AutoHotKeySimpleIDE\src\ahk_main" />
+      <recent name="D:\codeStudy\projs\ahk\src" />
+      <recent name="D:\codeStudy\projs\ahk\src\整理中\ahk_flat" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -84,7 +74,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ahk_main">
+  <component name="RunManager" selected="Python.nouse">
     <configuration name="ahk_main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ahk" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -192,8 +182,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ahk_main" />
         <item itemvalue="Python.nouse" />
+        <item itemvalue="Python.ahk_main" />
         <item itemvalue="Python.main1" />
         <item itemvalue="Python.flattst" />
         <item itemvalue="Python.ahk_main (1)" />
@@ -281,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587995763624</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="4,29编译功能完工，可以正常运行。计划重构一下，优化一下结构，并且把ui文件转化为python类，但是有报错">
+      <created>1588169374783</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1588169374783</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -318,6 +315,7 @@
     <MESSAGE value="4,25实现了打开文件和运行" />
     <MESSAGE value="4,26" />
     <MESSAGE value="4,27完成了热键部分，执行功能可以使用了，编译功能还在开发中。ui设计有微小改变。" />
-    <option name="LAST_COMMIT_MESSAGE" value="4,27完成了热键部分，执行功能可以使用了，编译功能还在开发中。ui设计有微小改变。" />
+    <MESSAGE value="4,29编译功能完工，可以正常运行。计划重构一下，优化一下结构，并且把ui文件转化为python类，但是有报错" />
+    <option name="LAST_COMMIT_MESSAGE" value="4,29编译功能完工，可以正常运行。计划重构一下，优化一下结构，并且把ui文件转化为python类，但是有报错" />
   </component>
 </project>

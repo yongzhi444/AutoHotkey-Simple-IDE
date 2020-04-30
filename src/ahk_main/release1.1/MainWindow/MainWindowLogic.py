@@ -2,16 +2,16 @@ from PySide2.QtWidgets import QApplication, QMessageBox, QTreeWidget, QTreeWidge
 from PySide2.QtUiTools import QUiLoader
 import os
 from threading import Thread
-from compileWindow import CompileWindow
-from UI.mainUI import MainWindowUI
-from magicChange.base1 import bs_Magic
-
+from compile import Compile
+from magicChange import bs_Magic
+from src.ahk_main.ahk_main import isVar
 # 等号赋值我没做，因为我暂时并不打算推荐用户使用等号赋值的操作
 # todo code 竖项自动移动
 # todo 语法检查
 # todo 自动标点成对的引号括号百分号 ctrlxd行操作
 # todo 回车键直接输入啊
 # todo 设置菜单
+# todo run 好像得多线程
 # todo 滚动条美观优化
 # todo 编译
 # todo 延时工具
@@ -21,22 +21,11 @@ from magicChange.base1 import bs_Magic
 # 下面是一些静态方法，以后可以独立用一个文件，更加整洁一点
 
 
-def isVar(str1):
-    # todo 用于判定，当前的字符串,是否符合变量命名规范
-    if "-" in str1:
-        return False
-    if str1[0].isdigit():
-        return False
-    if str1:
-        return True
-    else:
-        return False
-
 
 class out_put:
     def __init__(self):
-        self.compile1 = CompileWindow("default")
-        self.ui = MainWindowUI()
+        self.compile1 = Compile("default")
+        self.ui = QUiLoader().load('MainWindowUI.ui')
         # self.ui.insert_btn.clicked.connect(self.insert)
         # self.ui.Form.funs.hot_key.hot_key_ok.connect(self.hot_key_pressed())
         print(self.ui.whatsThis())
@@ -369,9 +358,3 @@ class out_put:
         # t = Thread(target=self.compile_task, daemon=True)
         # t.start()
         pass
-
-
-app = QApplication([])
-op = out_put()
-op.ui.show()
-app.exec_()
