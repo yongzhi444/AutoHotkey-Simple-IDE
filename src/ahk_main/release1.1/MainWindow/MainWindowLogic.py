@@ -2,7 +2,7 @@ from PySide2.QtWidgets import QApplication, QMessageBox, QTreeWidget, QTreeWidge
 from PySide2.QtUiTools import QUiLoader
 import os
 from threading import Thread
-from compile import Compile
+# from compile import Compile
 from magicChange import bs_Magic
 from src.ahk_main.ahk_main import isVar
 # 等号赋值我没做，因为我暂时并不打算推荐用户使用等号赋值的操作
@@ -22,7 +22,7 @@ from src.ahk_main.ahk_main import isVar
 
 
 
-class out_put:
+class MainWindow:
     def __init__(self):
         self.compile1 = Compile("default")
         self.ui = QUiLoader().load('MainWindowUI.ui')

@@ -1,6 +1,7 @@
-
+from PySide2.QtWidgets import QApplication
+from MainWindow.MainWindowLogic import MainWindow
 
 app = QApplication([])
-op = out_put()
+op = MainWindow()
 op.ui.show()
 app.exec_()
