@@ -1,5 +1,5 @@
 from PySide2.QtWidgets import QApplication
-from MainWindow.MainWindowLogic import MainWindow
+from MainWindowLogic import MainWindow
 
 app = QApplication([])
 op = MainWindow()

@@ -1,10 +1,10 @@
-from PySide2.QtWidgets import QApplication, QMessageBox, QTreeWidget, QTreeWidgetItem, QFileDialog
+from PySide2.QtWidgets import QMessageBox, QFileDialog
 from PySide2.QtUiTools import QUiLoader
-import setting_pyfile
 import os
 from threading import Thread
-
-# import t_btn1
+from CompileLogic import Compile
+from tools.Bs_Magic import Bs_Magic
+from tools.tool1 import isVar
 # 等号赋值我没做，因为我暂时并不打算推荐用户使用等号赋值的操作
 # todo code 竖项自动移动
 # todo 语法检查
@@ -19,26 +19,13 @@ from threading import Thread
 # todo 编译和保存的成功提示
 # todo 编译的时候记得把那个按键改成循环的形式
 # 下面是一些静态方法，以后可以独立用一个文件，更加整洁一点
-from compile import Compile
-from magicChange import bs_Magic
 
 
-def isVar(str1):
-    # todo 用于判定，当前的字符串,是否符合变量命名规范
-    if "-" in str1:
-        return False
-    if str1[0].isdigit():
-        return False
-    if str1:
-        return True
-    else:
-        return False
 
-
-class out_put:
+class MainWindow:
     def __init__(self):
         self.compile1 = Compile("default")
-        self.ui = QUiLoader().load('ahk_main.ui')
+        self.ui = QUiLoader().load('MainWindowUI.ui')
         # self.ui.insert_btn.clicked.connect(self.insert)
         # self.ui.Form.funs.hot_key.hot_key_ok.connect(self.hot_key_pressed())
         print(self.ui.whatsThis())
@@ -194,10 +181,10 @@ class out_put:
         print(openfile_name)
         pass
 
-    def setting_connected(self):
-        setting_show1 = setting_pyfile.setting_show()
-        setting_show1.ui.show()
-        setting_show1.ui.exec()
+    # def setting_connected(self):
+    #     setting_show1 = setting_pyfile.setting_show()
+    #     setting_show1.ui.show()
+    #     setting_show1.ui.exec()
 
     def thread_target(self):
         my_command = "AutoHotkeyU64.exe temp.ahk"
@@ -206,7 +193,7 @@ class out_put:
     def run_btn_clicked(self):
         with open("temp.ahk", "w", encoding="gbk") as fp:
             for line in self.ui.code_text.toPlainText().split("\n"):
-                context = bs_Magic(line)
+                context = Bs_Magic(line)
                 if context:
                     fp.write(context + "\n")
         t = Thread(target=self.thread_target, daemon=True)
@@ -363,7 +350,7 @@ class out_put:
     def cp_btn_clicked(self):
         with open("temp.ahk", "w", encoding="gbk") as fp:
             for line in self.ui.code_text.toPlainText().split("\n"):
-                context = bs_Magic(line)
+                context = Bs_Magic(line)
                 if context:
                     fp.write(context + "\n")
         self.compile1.ui.show()
@@ -371,9 +358,3 @@ class out_put:
         # t = Thread(target=self.compile_task, daemon=True)
         # t.start()
         pass
-
-
-app = QApplication([])
-op = out_put()
-op.ui.show()
-app.exec_()

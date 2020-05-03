@@ -2,13 +2,11 @@ import os
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtWidgets import *
 # todo 生成文件之后要有提示和快捷打开文件夹的按钮
-
-from src.ahk_main.release1.tools.Bs_Magic import Bs_Magic
-
-
+from tools.Bs_Magic import Bs_Magic
+# todo compiler 的选择如果没选返回了空
 class Compile:
     def __init__(self, a):
-        self.ui = QUiLoader().load("compile.ui")
+        self.ui = QUiLoader().load("CompileUI.ui")
         self.ui.a_choose.clicked.connect(self.a_choose_clicked)
         self.ui.b_choose.clicked.connect(self.b_choose_clicked)
         self.ui.start.clicked.connect(self.start_clicked)
@@ -68,7 +66,4 @@ class Compile:
         os.system(command)
         pass
 
-app = QApplication([])
-op = Compile("default")
-op.ui.show()
-app.exec_()
+#
